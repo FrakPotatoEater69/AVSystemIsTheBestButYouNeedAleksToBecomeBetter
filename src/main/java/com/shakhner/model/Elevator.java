@@ -23,4 +23,36 @@ public class Elevator {
     public ElevatorStatus getStatus() {
         return elevatorState.getStatus();
     }
+
+    public Integer getElevatorId() {
+        return elevatorId;
+    }
+
+    public void setElevatorId(Integer elevatorId) {
+        this.elevatorId = elevatorId;
+    }
+
+    public ElevatorState getElevatorState() {
+        return elevatorState;
+    }
+
+    public void setElevatorState(ElevatorState elevatorState) {
+        this.elevatorState = elevatorState;
+    }
+
+    public Integer getCurrentFloor() {
+        return currentFloor;
+    }
+
+    public void setCurrentFloor(Integer currentFloor) {
+        this.currentFloor = currentFloor;
+    }
+
+    public Integer getNextDirection() {
+        return nextDirection;
+    }
+
+    public void setNextDirection(Integer nextDirection) {
+        this.nextDirection = nextDirection;
+    }
 }
