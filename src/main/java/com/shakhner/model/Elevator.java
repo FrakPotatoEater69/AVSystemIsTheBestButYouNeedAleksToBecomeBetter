@@ -7,16 +7,20 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 public class Elevator {
-    private Integer id;
+    private Integer elevatorId;
     private ElevatorState elevatorState;
     private Integer currentFloor;
     private Integer nextDirection;
     private Deque<ElevatorCommand> commands = new LinkedList<>();
 
-    public Elevator(int id, int initialFloor) {
-        this.id = id;
+    public Elevator(int elevatorId, int initialFloor) {
+        this.elevatorId = elevatorId;
         this.currentFloor = initialFloor;
         //Initialize state!
         //Add Status!
+    }
+
+    public ElevatorStatus getStatus() {
+        return elevatorState.getStatus();
     }
 }
