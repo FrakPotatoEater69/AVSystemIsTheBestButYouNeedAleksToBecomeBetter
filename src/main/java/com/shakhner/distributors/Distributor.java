@@ -1,4 +1,4 @@
-package com.shakhner.distribution;
+package com.shakhner.distributors;
 
 import java.util.ArrayList;
 import com.shakhner.model.Elevator;
