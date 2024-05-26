@@ -114,12 +114,11 @@ Commands can be entered in the console to simulate real-time elevator requests a
 ## Why This Project Rocks
 - **Scalability**: Easily handles multiple elevators and complex request patterns.
 - **Flexibility**: The use of design patterns ensures the system is easy to extend and modify.
-- **Efficiency**: Intelligent algorithms minimize wait times and optimize elevator usage.
 - **Maintainability**: Clean, well-structured code makes it easy to understand and maintain.
 
 ## Conclusion
 
-This Elevator System Project demonstrates the power of good design and the effective use of design patterns. It's robust, efficient, and ready to tackle any elevator dispatching challenge. Whether you're a developer looking to understand the implementation of design patterns in a real-world scenario or a building manager in need of a reliable elevator system, this project has got you covered.
+This Elevator System Project demonstrates the power of good design (I hope😂) and the effective use of design patterns. It's robust and ready to tackle any elevator dispatching challenge.
 
 Enjoy the ride! 🎉
 
