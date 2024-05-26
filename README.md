@@ -15,6 +15,42 @@ Welcome to the Elevator System Project! 🚀 This README will guide you through 
 
 The Elevator System Project simulates an elevator control system that efficiently manages multiple elevators in a building. Whether you're dealing with high-rise office buildings or residential complexes, this project provides a scalable solution to handle elevator requests smoothly and effectively.
 
+## Development Steps
+
+### 1. Architecture Planning
+
+Architecture planning is crucial for any application to ensure good scalability, allowing for future additions or adjustions in functionality. From the technical assignment, I read "Najprostsze rozwiązanie to FCFS (first-come, first-serve) wg kolejności zgłoszeń" and immediately realized that we could use the **Strategy** pattern for ElevatorSystem operation. This pattern allows changing the entire operation by simply replacing one interface implementation, which helps maintain low coupling. Embedding the functionality directly into the ElevatorSystem class would increase dependency and reduce flexibility. 
+
+The interface for this pattern is named `Distributor`, and all its implementations are located in the `distributorImpl` package.
+
+### 2. Elevator Functionality
+
+For the elevators' functionality, I utilized two patterns: **Final-state machine** and **Command**. These patterns help maintain low coupling between parts of the application and allow for easy addition of new functionalities in the future.
+
+- **Finite-state machine**: Manages the various states of the elevators. The states are stored in the `states` package, with the interface being `ElevatorState`.
+- **Command pattern**: Encapsulates commands to be executed on the elevators. The `ElevatorCommand` interface and its implementations are located in the `commands` package.
+
+### 3. Interface-Driven Design
+
+At the start of the development, I chose an interface-driven design approach. This means initially describing all interfaces and planning their interactions. Once the interfaces were well-defined, I proceeded to implement the functionality.
+
+### 4. Console Output
+
+I considered creating a UI using JavaFX, where the `step()` method would execute every second for all elevators. However, simulating user actions in such a setup would be complex and time-consuming. Given the limited time available(as I mentioned, my delay in sending the solution was due to my love for my insurance agent), I decided to implement a console output for simplicity and clarity.
+
+### 5. Elevator States and Commands
+
+Elevators have four states, and as I developed the Distributors, I also created the corresponding commands. Following the SOLID principles was a priority throughout the development process to ensure a robust and maintainable system.
+
+### 6. Main Class and User Input
+
+The main class, `ElevatorSystem`, maintains a list of all elevators and contains the primary method, `run()`, which handles user input. For user input, a separate class, `ConsoleInputHandler`, was added. This class validates all (or almost all) user inputs using the `Validator` class and its static methods.
+
+---
+
+I hope this explanation provides a clear and detailed overview of the development process. If needed, I can delve into more specifics, but I wanted to keep this concise to respect your time 😁.
+
+
 ## Key Features
 - **Efficient Elevator Dispatching**: Uses advanced algorithms to minimize wait times and optimize elevator movements.
 - **Dynamic Command Handling**: Allows adding commands dynamically with checks to ensure the best service.
