@@ -13,11 +13,11 @@ public class FirstComeFirstServeDistributor implements Distributor {
         List<Elevator> freeElevators = findFreeElevators(elevators);
 
         if (freeElevators.isEmpty())
-            findNearestElevator(elevators, floorNumber).receiveNewCommand(new AddCommandAsFirst(new MoveToCommand(floorNumber, direction,
-                    new AddCommandAsFirst(new ReceiveCommand(floorNumber, new AddTargetAsFirstCommand())))));
+            findNearestElevator(elevators, floorNumber).receiveNewCommand(new AddCommandAsLast(new MoveToCommand(floorNumber, direction,
+                                                                         new AddCommandAsFirst(new ReceiveCommand(floorNumber, new AddTargetAsFirstCommand())))));
         else
             findNearestElevator(freeElevators, floorNumber).receiveNewCommand(new AddCommandAsLast(new MoveToCommand(floorNumber, direction,
-                    new AddCommandAsFirst(new ReceiveCommand(floorNumber, new AddTargetAsFirstCommand())))));
+                                                                                new AddCommandAsFirst(new ReceiveCommand(floorNumber, new AddTargetAsFirstCommand())))));
 
     }
 
