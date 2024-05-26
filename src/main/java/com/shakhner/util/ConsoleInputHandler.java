@@ -23,4 +23,17 @@ public class ConsoleInputHandler implements AutoCloseable{
     public void close() throws Exception {
         scanner.close();
     }
+
+    public String[] getCommandFromConsole() {
+        try {
+            String[] input = scanner.nextLine().trim().split(" ");
+
+            Validator.validateCommandString(input);
+
+            return  input;
+        } catch (Exception e) {
+            System.out.println("Invalid operation");
+            return null;
+        }
+    }
 }

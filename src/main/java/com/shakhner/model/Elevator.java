@@ -75,6 +75,10 @@ public class Elevator {
         return targetFloor;
     }
 
+    public void doStep() {
+        elevatorState.doStep();
+    }
+
     public void moveUp() {
         currentFloor++;
     }
