@@ -1,7 +1,9 @@
 package com.shakhner.models;
 
 import com.shakhner.commands.ElevatorCommand;
+import com.shakhner.commands.commandImpl.AddCommandAsFirst;
 import com.shakhner.states.ElevatorState;
+import com.shakhner.states.stateImpl.WaitingState;
 import com.shakhner.util.ConsoleInputHandler;
 
 import java.util.Deque;
@@ -84,5 +86,34 @@ public class Elevator {
 
     public void moveDown() {
         currentFloor--;
+    }
+
+    public void addCommandAsFirst(ElevatorCommand command) {
+        this.commands.addFirst(command);
+    }
+
+    public void receiveNewCommand(ElevatorCommand command) {
+        command.execute(this);
+        updateState();
+    }
+
+    public void updateState() {
+        if(commands.isEmpty())
+            changeState(new WaitingState(this));
+        else {
+            commands.peek().setElevatorState(this);
+        }
+    }
+
+    public void changeState(ElevatorState newState) {
+        this.elevatorState = newState;
+    }
+
+    public void removeExecutedCommand() {
+        commands.pop();
+    }
+
+    public void addCommandAsLast(ElevatorCommand command) {
+        this.commands.addLast(command);
     }
 }
