@@ -10,6 +10,7 @@ public class AddCommandAsFirst implements ElevatorCommand {
     public AddCommandAsFirst(ElevatorCommand command) {
         this.command = command;
     }
+
     @Override
     public void execute(Elevator elevator) {
         elevator.addCommandAsFirst(command);

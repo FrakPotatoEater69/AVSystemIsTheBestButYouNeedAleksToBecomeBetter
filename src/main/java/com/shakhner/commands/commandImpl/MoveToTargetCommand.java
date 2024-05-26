@@ -13,6 +13,7 @@ public class MoveToTargetCommand implements ElevatorCommand {
     public MoveToTargetCommand(Integer floorNumber) {
         this.floorNumber = floorNumber;
     }
+
     @Override
     public void execute(Elevator elevator) {
         elevator.removeExecutedCommand();
@@ -37,9 +38,9 @@ public class MoveToTargetCommand implements ElevatorCommand {
     private ElevatorState selectState(Elevator elevator) {
         Integer currentFloor = elevator.getCurrentFloor();
 
-        if(currentFloor.equals(floorNumber))
+        if (currentFloor.equals(floorNumber))
             return new ReceivingOrderState(elevator);
-        else if(currentFloor < floorNumber)
+        else if (currentFloor < floorNumber)
             return new MovingUpState(elevator);
         else
             return new MovingDownState(elevator);

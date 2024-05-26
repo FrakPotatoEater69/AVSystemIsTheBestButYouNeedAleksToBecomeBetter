@@ -23,7 +23,7 @@ public class Elevator {
     }
 
     public ElevatorCommand getCurrentCommand() {
-       return commands.peek();
+        return commands.peek();
     }
 
     public ElevatorStatus getStatus() {
@@ -90,7 +90,7 @@ public class Elevator {
     }
 
     public void updateState() {
-        if(commands.isEmpty())
+        if (commands.isEmpty())
             changeState(new WaitingState(this));
         else {
             commands.peek().setElevatorState(this);

@@ -12,6 +12,7 @@ public class ReceiveCommand implements ElevatorCommand {
         this.floorNumber = floorNumber;
         this.command = command;
     }
+
     @Override
     public void execute(Elevator elevator) {
         elevator.removeExecutedCommand();

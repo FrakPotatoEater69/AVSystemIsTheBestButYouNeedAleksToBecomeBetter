@@ -3,7 +3,8 @@ package com.shakhner.util;
 import java.util.Scanner;
 
 public class ConsoleInputHandler {
-    private static Scanner scanner = new Scanner(System.in);;
+    private static Scanner scanner = new Scanner(System.in);
+    ;
 
     public static Integer getIntegerFromConsoleWithCheck(Integer defaultValue) {
         try {
@@ -21,7 +22,7 @@ public class ConsoleInputHandler {
 
             Validator.validateCommandString(input);
 
-            return  input;
+            return input;
         } catch (Exception e) {
             System.out.println("Invalid operation");
             return null;

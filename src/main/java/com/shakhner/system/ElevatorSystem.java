@@ -28,10 +28,10 @@ public class ElevatorSystem {
     }
 
     public void run() {
-        while(true) {
+        while (true) {
             System.out.println("--------------------------");
             System.out.println("Id  Location  Target");
-            for(ElevatorStatus status : status())
+            for (ElevatorStatus status : status())
                 System.out.println(status);
             System.out.println("--------------------------");
             System.out.println("Order elevator:  \"pickup <floor number> <direction>\"");
@@ -42,9 +42,11 @@ public class ElevatorSystem {
 
             Arrays.toString(command);
             switch (command[0]) {
-                case "pickup" : pickUp(Integer.parseInt(command[1]), Integer.parseInt(command[2]));
+                case "pickup":
+                    pickUp(Integer.parseInt(command[1]), Integer.parseInt(command[2]));
                     break;
-                case "s"   : step();
+                case "s":
+                    step();
                     break;
             }
         }

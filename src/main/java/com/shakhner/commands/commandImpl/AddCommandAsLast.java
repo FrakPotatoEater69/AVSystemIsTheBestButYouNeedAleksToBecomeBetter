@@ -9,6 +9,7 @@ public class AddCommandAsLast implements ElevatorCommand {
     public AddCommandAsLast(ElevatorCommand command) {
         this.command = command;
     }
+
     @Override
     public void execute(Elevator elevator) {
         elevator.addCommandAsLast(command);

@@ -5,6 +5,7 @@ import com.shakhner.models.Elevator;
 
 public class AddTargetAsFirstCommand implements ElevatorCommand {
     private Integer floorNumber;
+
     @Override
     public void execute(Elevator elevator) {
         elevator.addCommandAsFirst(new MoveToTargetCommand(floorNumber));

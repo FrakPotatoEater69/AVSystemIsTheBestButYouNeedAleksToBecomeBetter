@@ -13,18 +13,18 @@ public class Main {
         elevatorSystem.run();
     }
 
-    private static void validateArguments(String[] args){
-        if(args.length < 2) {
+    private static void validateArguments(String[] args) {
+        if (args.length < 2) {
             System.out.println("You must provide 2 arguments: <number of elevators> <number of floors>");
             System.exit(0);
         }
 
-        if(Integer.parseInt(args[0]) < 1 && Integer.parseInt(args[0]) > 16) {
+        if (Integer.parseInt(args[0]) < 1 && Integer.parseInt(args[0]) > 16) {
             System.out.println("Number of elevators should be beetwen 0 and 16");
             System.exit(0);
         }
 
-        if(Integer.parseInt(args[1]) < 1) {
+        if (Integer.parseInt(args[1]) < 1) {
             System.out.println("Number of floors must be positive");
             System.exit(0);
         }

@@ -11,6 +11,7 @@ public class MoveToCommand implements ElevatorCommand {
     private Integer floorNumber;
     private Integer direction;
     private ElevatorCommand command;
+
     public MoveToCommand(Integer floorNumber, Integer direction, ElevatorCommand command) {
         this.floorNumber = floorNumber;
         this.direction = direction;
@@ -44,9 +45,9 @@ public class MoveToCommand implements ElevatorCommand {
     private ElevatorState selectState(Elevator elevator) {
         Integer currentFloor = elevator.getCurrentFloor();
 
-        if(currentFloor.equals(floorNumber))
+        if (currentFloor.equals(floorNumber))
             return new ReceivingOrderState(elevator);
-        else if(currentFloor < floorNumber)
+        else if (currentFloor < floorNumber)
             return new MovingUpState(elevator);
         else
             return new MovingDownState(elevator);

@@ -15,7 +15,7 @@ public class MovingDownState implements ElevatorState {
     public void doStep() {
         elevator.moveDown();
 
-        if(isTargetFloorReached())
+        if (isTargetFloorReached())
             elevator.getCurrentCommand().execute(elevator);
     }
 
