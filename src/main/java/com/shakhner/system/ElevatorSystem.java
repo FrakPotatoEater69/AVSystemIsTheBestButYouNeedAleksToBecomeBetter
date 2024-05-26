@@ -7,6 +7,7 @@ import com.shakhner.util.ConsoleInputHandler;
 import com.shakhner.util.Validator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ElevatorSystem {
@@ -36,10 +37,11 @@ public class ElevatorSystem {
             System.out.println("Order elevator:  \"pickup <floor number> <direction>\"");
             System.out.println("Next step:       \"s\"");
             System.out.println("Insert operation:");
-            ConsoleInputHandler consoleInputHandler = new ConsoleInputHandler();
-            String[] command = consoleInputHandler.getCommandFromConsole();
+
+            String[] command = ConsoleInputHandler.getCommandFromConsoleWithCheck();
+
+            Arrays.toString(command);
             switch (command[0]) {
-                //!!! Add Integer validation
                 case "pickup" : pickUp(Integer.parseInt(command[1]), Integer.parseInt(command[2]));
                     break;
                 case "s"   : step();

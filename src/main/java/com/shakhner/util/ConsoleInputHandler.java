@@ -2,29 +2,20 @@ package com.shakhner.util;
 
 import java.util.Scanner;
 
-public class ConsoleInputHandler implements AutoCloseable{
-    private Scanner scanner;
+public class ConsoleInputHandler {
+    private static Scanner scanner = new Scanner(System.in);;
 
-    public ConsoleInputHandler() {
-        scanner = new Scanner(System.in);
-    }
-
-    public Integer getIntegerFromConsoleAndCheck(Integer defaultValue) {
+    public static Integer getIntegerFromConsoleWithCheck(Integer defaultValue) {
         try {
-            Integer inputInt = scanner.nextInt();
+            Integer value = scanner.nextInt();
 
-            return Validator.validateFloorNumber(inputInt);
+            return Validator.validateFloorNumber(value);
         } catch (Exception e) {
             return defaultValue;
         }
     }
 
-    @Override
-    public void close() throws Exception {
-        scanner.close();
-    }
-
-    public String[] getCommandFromConsole() {
+    public static String[] getCommandFromConsoleWithCheck() {
         try {
             String[] input = scanner.nextLine().trim().split(" ");
 

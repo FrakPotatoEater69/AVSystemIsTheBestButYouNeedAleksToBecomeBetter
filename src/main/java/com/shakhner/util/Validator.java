@@ -1,5 +1,7 @@
 package com.shakhner.util;
 
+import java.util.Scanner;
+
 public class Validator {
     private static Integer maximumNumber;
 

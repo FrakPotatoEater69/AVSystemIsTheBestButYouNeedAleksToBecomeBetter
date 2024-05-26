@@ -1,7 +1,6 @@
 package com.shakhner.models;
 
 import com.shakhner.commands.ElevatorCommand;
-import com.shakhner.commands.commandImpl.AddCommandAsFirst;
 import com.shakhner.states.ElevatorState;
 import com.shakhner.states.stateImpl.WaitingState;
 import com.shakhner.util.ConsoleInputHandler;
@@ -19,7 +18,7 @@ public class Elevator {
     public Elevator(int elevatorId, int initialFloor) {
         this.elevatorId = elevatorId;
         this.currentFloor = initialFloor;
-        //Initialize state!
+        this.elevatorState = new WaitingState(this);
         //Add Status!
     }
 
@@ -64,16 +63,9 @@ public class Elevator {
     }
 
     public Integer receiveTargetFloorFromInput() {
-        System.out.printf("\n[ %d ] " + "You're on %d floor. Choose target: ", elevatorId, currentFloor);
-        Integer targetFloor;
+        System.out.printf("\n[ %d ] You're on %d floor. Choose target: ", elevatorId, currentFloor);
 
-        try (ConsoleInputHandler consoleInputHandler = new ConsoleInputHandler()) {
-          targetFloor = consoleInputHandler.getIntegerFromConsoleAndCheck(currentFloor);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-
-        return targetFloor;
+        return ConsoleInputHandler.getIntegerFromConsoleWithCheck(currentFloor);
     }
 
     public void doStep() {

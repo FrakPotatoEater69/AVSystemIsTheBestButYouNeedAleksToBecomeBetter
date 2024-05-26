@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AVSystemIsTheBestButYouNeedAleksToBecomeBetter:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AVSystemIsTheBestButYouNeedAleksToBecomeBetter_jar</output-path>
+    <root id="archive" name="AVSystemIsTheBestButYouNeedAleksToBecomeBetter.jar">
+      <element id="module-output" name="AVSystemIsTheBestButYouNeedAleksToBecomeBetter" />
+    </root>
+  </artifact>
+</component>
