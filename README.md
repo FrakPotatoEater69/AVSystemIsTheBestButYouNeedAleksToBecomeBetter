@@ -4,6 +4,7 @@ Welcome to the Elevator System Project! 🚀 This README will guide you through 
 
 ## Table of Contents
 - [Introduction](#introduction)
+- [**Development Steps**](#development-steps)
 - [Key Features](#key-features)
 - [Design Patterns](#design-patterns)
 - [How It Works](#how-it-works)
