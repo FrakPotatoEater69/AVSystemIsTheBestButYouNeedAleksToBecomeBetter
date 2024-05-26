@@ -1,4 +1,4 @@
-package com.shakhner.model;
+package com.shakhner.models;
 
 public class ElevatorStatus {
     private Integer elevatorId;

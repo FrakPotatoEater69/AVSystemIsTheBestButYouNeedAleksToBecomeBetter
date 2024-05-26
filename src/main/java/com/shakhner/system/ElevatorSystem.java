@@ -1,8 +1,8 @@
 package com.shakhner.system;
 
 import com.shakhner.distributors.Distributor;
-import com.shakhner.model.Elevator;
-import com.shakhner.model.ElevatorStatus;
+import com.shakhner.models.Elevator;
+import com.shakhner.models.ElevatorStatus;
 import com.shakhner.util.ConsoleInputHandler;
 import com.shakhner.util.Validator;
 

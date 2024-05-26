@@ -1,7 +1,7 @@
 package com.shakhner.states.stateImpl;
 
-import com.shakhner.model.Elevator;
-import com.shakhner.model.ElevatorStatus;
+import com.shakhner.models.Elevator;
+import com.shakhner.models.ElevatorStatus;
 import com.shakhner.states.ElevatorState;
 
 public class MovingDownState implements ElevatorState {

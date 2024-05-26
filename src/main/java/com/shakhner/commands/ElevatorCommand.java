@@ -1,6 +1,6 @@
 package com.shakhner.commands;
 
-import com.shakhner.model.Elevator;
+import com.shakhner.models.Elevator;
 
 public interface ElevatorCommand {
     public void execute(Elevator elevator);

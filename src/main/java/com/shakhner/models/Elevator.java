@@ -1,9 +1,8 @@
-package com.shakhner.model;
+package com.shakhner.models;
 
 import com.shakhner.commands.ElevatorCommand;
 import com.shakhner.states.ElevatorState;
 import com.shakhner.util.ConsoleInputHandler;
-import com.shakhner.util.Validator;
 
 import java.util.Deque;
 import java.util.LinkedList;

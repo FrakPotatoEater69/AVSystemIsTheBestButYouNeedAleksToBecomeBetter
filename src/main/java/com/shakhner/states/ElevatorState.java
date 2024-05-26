@@ -1,6 +1,6 @@
 package com.shakhner.states;
 
-import com.shakhner.model.ElevatorStatus;
+import com.shakhner.models.ElevatorStatus;
 
 public interface ElevatorState {
     public void doStep();
