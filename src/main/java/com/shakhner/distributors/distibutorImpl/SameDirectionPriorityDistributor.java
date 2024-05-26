@@ -7,7 +7,7 @@ import com.shakhner.models.Elevator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PrioritizingSameDirectionDistributor implements Distributor {
+public class SameDirectionPriorityDistributor implements Distributor {
     @Override
     public void distribute(List<Elevator> elevators, Integer floorNumber, Integer direction) {
         List<Elevator> selectedElevators = new ArrayList<>();
