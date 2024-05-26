@@ -47,12 +47,12 @@ Classes implementing the Command Pattern:
 
 **Start the System**:
 ```
-java -jar ElevatorSystem.jar <number_of_elevators> <number_of_floors>
+java -jar AVSystemIsTheBestButYouNeedAleksToBecomeBetter.jar <number_of_elevators> <number_of_floors>
 ```
 
 **Example:**
 ```
-java -jar ElevatorSystem.jar 4 10
+java -jar AVSystemIsTheBestButYouNeedAleksToBecomeBetter.jar 4 10
 ```
 
 **Commands**:
