@@ -17,15 +17,10 @@ public class ConsoleInputHandler {
     }
 
     public static String[] getCommandFromConsoleWithCheck() {
-        try {
             String[] input = scanner.nextLine().trim().split("\\s+");
 
             Validator.validateCommandString(input);
 
             return input;
-        } catch (Exception e) {
-            System.out.println("Invalid operation");
-            return null;
-        }
     }
 }

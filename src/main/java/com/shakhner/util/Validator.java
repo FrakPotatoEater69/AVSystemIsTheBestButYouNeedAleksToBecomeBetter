@@ -17,9 +17,11 @@ public class Validator {
     }
 
     public static void validateCommandString(String[] input) {
-        if (input.length > 2) {
+        if (input.length > 2 && input.length < 4) {
             input[1] = String.valueOf(validateFloorNumber(Integer.parseInt(input[1])));
             input[2] = String.valueOf(validateDirectionValue(Integer.parseInt(input[2])));
+        } else if (input.length != 1) {
+            throw new UnsupportedOperationException();
         }
     }
 

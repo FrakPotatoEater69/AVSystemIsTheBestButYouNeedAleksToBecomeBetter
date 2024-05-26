@@ -40,8 +40,13 @@ public class ElevatorSystem {
             System.out.printf("%-20s\"s\"%n", "Next step:");
             System.out.printf("%-20s\"stop\"%n", "Stop the system:");
             System.out.println("Insert operation:");
-
-            String[] command = ConsoleInputHandler.getCommandFromConsoleWithCheck();
+            String[] command = null;
+            try {
+                 command = ConsoleInputHandler.getCommandFromConsoleWithCheck();
+            } catch (Exception e) {
+                System.out.println("Invalid operation");
+                continue;
+            }
 
             switch (command[0]) {
                 case "pickup" -> pickUp(Integer.parseInt(command[1]), Integer.parseInt(command[2]));
