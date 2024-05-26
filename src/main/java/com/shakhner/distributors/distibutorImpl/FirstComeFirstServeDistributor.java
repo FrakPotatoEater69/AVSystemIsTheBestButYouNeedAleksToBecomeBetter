@@ -40,13 +40,18 @@ public class FirstComeFirstServeDistributor implements Distributor {
     private Elevator findNearestElevator(List<Elevator> elevators, Integer floorNumber) {
         Elevator nearestElevator = elevators.get(0);
         Integer smallestDifference = Math.abs(floorNumber - elevators.get(0).getStatus().getCurrentFloor());
-
+        Integer minAmountOfCommandToDo = elevators.get(0).getAmountOfCommandToDo();
+////Indicate command check
         for (Elevator elevator : elevators) {
             Integer difference = Math.abs(floorNumber - elevator.getStatus().getCurrentFloor());
 
             if (smallestDifference > difference) {
                 nearestElevator = elevator;
                 smallestDifference = difference;
+                minAmountOfCommandToDo = elevator.getAmountOfCommandToDo();
+            } else if(smallestDifference == difference) {
+                if(minAmountOfCommandToDo > elevator.getAmountOfCommandToDo())
+                    nearestElevator = elevator;
             }
         }
 

@@ -108,4 +108,8 @@ public class Elevator {
     public void addCommandAsLast(ElevatorCommand command) {
         this.commands.addLast(command);
     }
+
+    public Integer getAmountOfCommandToDo() {
+        return commands.size();
+    }
 }
