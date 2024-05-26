@@ -1,19 +1,17 @@
 package com.shakhner.util;
 
-import java.util.Scanner;
-
 public class Validator {
-    private static Integer maximumNumber;
+    private static Integer MAXIMUM_FLOORS_NUMBER;
 
-    public static void setMaximumNumber(Integer maximumNumber) {
-        Validator.maximumNumber = maximumNumber;
+    public static void setMaximumFloorsNumber(Integer maximumFloorsNumber) {
+        Validator.MAXIMUM_FLOORS_NUMBER = maximumFloorsNumber;
     }
 
     public static Integer validateFloorNumber(Integer value) {
         if (0 > value)
             return 0;
-        else if (value > maximumNumber)
-            return maximumNumber;
+        else if (value > MAXIMUM_FLOORS_NUMBER)
+            return MAXIMUM_FLOORS_NUMBER;
         else
             return value;
     }
@@ -27,5 +25,22 @@ public class Validator {
 
     private static Integer validateDirectionValue(Integer value) {
         return (int) Math.signum(value);
+    }
+
+    public static void validateArguments(String[] args) {
+        if (args.length < 2) {
+            System.out.println("You must provide 2 arguments: <number of elevators> <number of floors>");
+            System.exit(0);
+        }
+
+        if (Integer.parseInt(args[0]) < 1 && Integer.parseInt(args[0]) > 16) {
+            System.out.println("Number of elevators should be beetwen 0 and 16");
+            System.exit(0);
+        }
+
+        if (Integer.parseInt(args[1]) < 1) {
+            System.out.println("Number of floors must be positive");
+            System.exit(0);
+        }
     }
 }
