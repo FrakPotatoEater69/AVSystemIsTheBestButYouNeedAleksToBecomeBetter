@@ -43,7 +43,6 @@ public class ElevatorSystem {
 
             String[] command = ConsoleInputHandler.getCommandFromConsoleWithCheck();
 
-            Arrays.toString(command);
             switch (command[0]) {
                 case "pickup" -> pickUp(Integer.parseInt(command[1]), Integer.parseInt(command[2]));
                 case "s" -> step();

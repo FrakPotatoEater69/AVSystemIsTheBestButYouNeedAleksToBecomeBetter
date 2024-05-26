@@ -8,7 +8,7 @@ public class Validator {
     }
 
     public static Integer validateFloorNumber(Integer value) {
-        if (0 > value)
+        if (value < 0)
             return 0;
         else if (value > MAXIMUM_FLOORS_NUMBER)
             return MAXIMUM_FLOORS_NUMBER;
