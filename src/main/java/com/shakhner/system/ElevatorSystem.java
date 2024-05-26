@@ -22,7 +22,7 @@ public class ElevatorSystem {
         for (int id = 0; id < numberOfElevators; id++)
             elevators.add(new Elevator(id, 0));
 
-        Validator.setMaximumFloorsNumber(numberOfElevators);
+        Validator.setMaximumFloorsNumber(numberOfFloors);
     }
 
     public ElevatorSystem() {
