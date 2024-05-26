@@ -23,7 +23,7 @@ public class Validator {
         }
     }
 
-    private static Integer validateDirectionValue(Integer value) {
+    public static Integer validateDirectionValue(Integer value) {
         return (int) Math.signum(value);
     }
 

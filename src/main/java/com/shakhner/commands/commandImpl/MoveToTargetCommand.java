@@ -7,6 +7,8 @@ import com.shakhner.states.stateImpl.MovingDownState;
 import com.shakhner.states.stateImpl.MovingUpState;
 import com.shakhner.states.stateImpl.ReceivingOrderState;
 
+import java.util.Objects;
+
 public class MoveToTargetCommand implements ElevatorCommand {
     private Integer floorNumber;
 
@@ -44,5 +46,13 @@ public class MoveToTargetCommand implements ElevatorCommand {
             return new MovingUpState(elevator);
         else
             return new MovingDownState(elevator);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MoveToTargetCommand that = (MoveToTargetCommand) o;
+        return Objects.equals(floorNumber, that.floorNumber);
     }
 }

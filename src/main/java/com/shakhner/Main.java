@@ -1,6 +1,7 @@
 package com.shakhner;
 
 import com.shakhner.distributors.distibutorImpl.FirstComeFirstServeDistributor;
+import com.shakhner.distributors.distibutorImpl.SameDirectionPriorityDistributor;
 import com.shakhner.system.ElevatorSystem;
 import com.shakhner.util.Validator;
 
