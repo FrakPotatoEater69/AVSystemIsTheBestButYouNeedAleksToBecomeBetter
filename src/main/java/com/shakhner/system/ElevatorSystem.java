@@ -36,22 +36,25 @@ public class ElevatorSystem {
             for (ElevatorStatus status : status())
                 System.out.println(status);
             System.out.println("--------------------------");
-            System.out.println("Order elevator:  \"pickup <floor number> <direction>\"");
-            System.out.println("Next step:       \"s\"");
+            System.out.printf("%-20s\"pickup <floor number> <direction>\"%n", "Order elevator:");
+            System.out.printf("%-20s\"s\"%n", "Next step:");
+            System.out.printf("%-20s\"stop\"%n", "Stop the system:");
             System.out.println("Insert operation:");
 
             String[] command = ConsoleInputHandler.getCommandFromConsoleWithCheck();
 
             Arrays.toString(command);
             switch (command[0]) {
-                case "pickup":
-                    pickUp(Integer.parseInt(command[1]), Integer.parseInt(command[2]));
-                    break;
-                case "s":
-                    step();
-                    break;
+                case "pickup" -> pickUp(Integer.parseInt(command[1]), Integer.parseInt(command[2]));
+                case "s" -> step();
+                case "stop" -> stop();
             }
         }
+    }
+
+    private void stop() {
+        System.out.println("GoodBye :)");
+        System.exit(1);
     }
 
     public void pickUp(Integer floorNumber, Integer direction) {
